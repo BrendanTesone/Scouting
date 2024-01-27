@@ -22,11 +22,11 @@ var config_data = `
       "code": "l",
       "type": "level",
       "choices": {
+		"p": "Pracitce<br>",
         "qm": "Quals<br>",
         "sf": "Semifinals<br>",
         "f": "Finals"
       },
-      "defaultValue": "qm",
       "required": "true"
     },
     { "name": "Match #",
@@ -54,14 +54,6 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2024/field_image.png",
-      "clickRestriction": "one",
-      "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
-      "shape": "circle 5 black red true"
     }
   ],
   "auton": [
@@ -87,10 +79,6 @@ var config_data = `
       "code": "tss",
       "type": "counter"
     },
-    { "name": "Times Amplified",
-      "code": "tta",
-      "type": "counter"
-    },
     { "name": "Pickup From",
       "code": "tpu",
       "type": "radio",
@@ -104,10 +92,6 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Stage Timer",
-      "code": "dt",
-      "type": "timer"
-    },
     { "name": "Final Status",
       "code": "fs",
       "type":"radio",
@@ -120,6 +104,20 @@ var config_data = `
         "x": "Not attempted"
       },
       "defaultValue": "x"
+	},
+    { 
+	"name": "How long did they take to climb/park?",
+      "code": "deps",
+      "type":"radio",
+      "choices": {
+        "1": "1(Slow)<br>",
+        "2": "2(Slightly Slow)<br>",
+        "3": "3(Slightly Fast)<br>",
+	    "4": "4(Fast)<br>",
+        "0": "Did Not Dock/Engage/Park<br>"
+      },
+      "required": "true",
+      "defaultValue": "0"
     },
     { "name": "Note in Trap",
       "code": "nit",
@@ -142,27 +140,28 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "Bad Defense<br>",
+        "2": "Below Average<br>",
+        "3": "Above average<br>",
+        "4": "Excellent<br>",
+        "0": "Did not play defense<br>"
       },
-      "defaultValue": "x"
+      "required": "true",
+      "defaultValue": "0"
     },
-    { "name": "Speed Rating",
+    { "name": "Speed",
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
+        "0": "Very Slow<br>",
+        "1": "Somewhat Slow<br>",
+        "2": "Somewhat fast<br>",
+	    "3": "Very Fast<br>"			
       },
-      "defaultValue":"3"
+      "required": "true",
+      "defaultValue": "0"
     },
-    { "name": "Died/Immobilized",
+    { "name": "Died/Immobilized for significant amt of time<br>(ex: about 15 seconds)",
       "code": "die",
       "type": "bool"
     },
@@ -182,8 +181,8 @@ var config_data = `
     { "name": "Comments",
       "code": "co",
       "type": "text",
-      "size": 15,
-      "maxSize": 55
+      "size": 30,
+      "maxSize": 89
     }
   ]
 }`;
