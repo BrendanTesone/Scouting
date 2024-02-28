@@ -5,11 +5,11 @@ var config_data = `
   "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name + last initial - ex: Ryan D",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
+      "size": 12,
+      "maxSize": 12,
       "required": "true"
     },
     { "name": "Event",
@@ -92,7 +92,7 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Final Status",
+    { "name": "Endgame Status",
       "code": "fs",
       "type":"radio",
       "choices": {
@@ -119,7 +119,7 @@ var config_data = `
       "required": "true",
       "defaultValue": "0"
     },
-    { "name": "Note in Trap",
+    { "name": "Is note in trap?",
       "code": "nit",
       "type": "bool"
     }
@@ -178,7 +178,7 @@ var config_data = `
       "code": "all",
       "type": "bool"
     },
-    { "name": "Comments",
+    { "name": "Comments(be concise)",
       "code": "co",
       "type": "text",
       "size": 30,
