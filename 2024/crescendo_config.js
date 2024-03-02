@@ -15,14 +15,14 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn",
+      "defaultValue": "RegalEagle",
       "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
       "choices": {
-		"p": "Pracitce<br>",
+		"p": "Practice<br>",
         "qm": "Quals<br>",
         "sf": "Semifinals<br>",
         "f": "Finals"
@@ -78,17 +78,6 @@ var config_data = `
     { "name": "Speaker Scores",
       "code": "tss",
       "type": "counter"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
     }
   ],
   "endgame": [
@@ -105,20 +94,6 @@ var config_data = `
       },
       "defaultValue": "x"
 	},
-    { 
-	"name": "How long did they take to climb/park?",
-      "code": "deps",
-      "type":"radio",
-      "choices": {
-        "1": "1(Slow)<br>",
-        "2": "2(Slightly Slow)<br>",
-        "3": "3(Slightly Fast)<br>",
-	    "4": "4(Fast)<br>",
-        "0": "Did Not Dock/Engage/Park<br>"
-      },
-      "required": "true",
-      "defaultValue": "0"
-    },
     { "name": "Is note in trap?",
       "code": "nit",
       "type": "bool"
@@ -149,18 +124,6 @@ var config_data = `
       "required": "true",
       "defaultValue": "0"
     },
-    { "name": "Speed",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "0": "Very Slow<br>",
-        "1": "Somewhat Slow<br>",
-        "2": "Somewhat fast<br>",
-	    "3": "Very Fast<br>"			
-      },
-      "required": "true",
-      "defaultValue": "0"
-    },
     { "name": "Died/Immobilized for significant amt of time<br>(ex: about 15 seconds)",
       "code": "die",
       "type": "bool"
@@ -176,7 +139,14 @@ var config_data = `
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
-      "type": "bool"
+      "type": "radio",
+	"choices": {
+          "0": "Bad/worst<br>",
+       	  "1": "Below Average<br>",
+       	  "2": "Above average<br>",
+          "3": "Excellent/ideal<br>"
+      },
+	"required": "true"
     },
     { "name": "Comments(be concise)",
       "code": "co",
