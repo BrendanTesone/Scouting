@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "RegalEagle",
+      "defaultValue": "Hudson Valley",
       "required": "true"
     },
     { "name": "Match Level",
