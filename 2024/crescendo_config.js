@@ -108,7 +108,7 @@ var config_data = `
         "1": "Not Effective<br>",
         "2": "Average<br>",
         "3": "Very Effective<br>",
-        "0": "Not observed"
+        "0": "Not observed<br>"
       },
       "defaultValue": "0"
     },
