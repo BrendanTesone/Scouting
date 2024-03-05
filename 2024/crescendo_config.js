@@ -81,21 +81,22 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Endgame Status",
+    { "name": "Can it climb?",
       "code": "fs",
-      "type":"radio",
-      "choices": {
-        "p": "Parked<br>",
-        "o": "Onstage<br>",
-        "s": "Onstage (Spotlit)<br>",
-        "h": "Harmony<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
+      "type":"bool"
       },
-      "defaultValue": "x"
-	},
     { "name": "Is note in trap?",
       "code": "nit",
+      "type": "bool"
+    }, 
+    {
+      "name": "Can it shoot from long distances(not directly under speaker)?",
+      "code": "biy",
+      "type": "bool"
+    },
+    {
+      "name": "Does it prioritize amplified scoring?",
+      "code": "idk",
       "type": "bool"
     }
   ],
@@ -104,21 +105,20 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "1": "Not Effective<br>",
+        "2": "Average<br>",
+        "3": "Very Effective<br>",
+        "0": "Not observed"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "1": "Bad Defense<br>",
-        "2": "Below Average<br>",
-        "3": "Above average<br>",
-        "4": "Excellent<br>",
+        "2": "Poor Defense<br>",
+        "4": "Average Average<br>",
+        "6": "Excellent average<br>",
         "0": "Did not play defense<br>"
       },
       "required": "true",
