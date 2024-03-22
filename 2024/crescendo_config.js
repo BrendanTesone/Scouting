@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "Hudson Valley",
+      "defaultValue": "NYLI2",
       "required": "true"
     },
     { "name": "Match Level",
@@ -95,7 +95,7 @@ var config_data = `
       "type": "bool"
     },
     {
-      "name": "Does it prioritize amplified scoring?",
+      "name": "Does it prioritize shooting while the speaker is amplified?",
       "code": "idk",
       "type": "bool"
     }

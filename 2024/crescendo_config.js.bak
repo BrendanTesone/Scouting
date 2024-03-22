@@ -5,29 +5,28 @@ var config_data = `
   "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name + last initial - ex: Ryan D",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
+      "size": 12,
+      "maxSize": 12,
       "required": "true"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn",
+      "defaultValue": "NYLI2",
       "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
       "choices": {
-		"p": "Pracitce<br>",
+		"p": "Practice<br>",
         "qm": "Quals<br>",
         "sf": "Semifinals<br>",
         "f": "Finals"
       },
-      "defaultValue": "qm",
       "required": "true"
     },
     { "name": "Match #",
@@ -79,49 +78,25 @@ var config_data = `
     { "name": "Speaker Scores",
       "code": "tss",
       "type": "counter"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
     }
   ],
   "endgame": [
-    { "name": "Final Status",
+    { "name": "Can it climb?",
       "code": "fs",
-      "type":"radio",
-      "choices": {
-        "p": "Parked<br>",
-        "o": "Onstage<br>",
-        "s": "Onstage (Spotlit)<br>",
-        "h": "Harmony<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
+      "type":"bool"
       },
-      "defaultValue": "x"
-	},
-    { 
-	"name": "How long did they take to climb/park?",
-      "code": "deps",
-      "type":"radio",
-      "choices": {
-        "1": "1(Slow)<br>",
-        "2": "2(Slightly Slow)<br>",
-        "3": "3(Slightly Fast)<br>",
-	    "4": "4(Fast)<br>",
-        "0": "Did Not Dock/Engage/Park<br>"
-      },
-      "required": "true",
-      "defaultValue": "0"
-    },
-    { "name": "Note in Trap",
+    { "name": "Is note in trap?",
       "code": "nit",
+      "type": "bool"
+    }, 
+    {
+      "name": "Can it shoot from long distances(not directly under speaker)?",
+      "code": "biy",
+      "type": "bool"
+    },
+    {
+      "name": "Does it prioritize amplified scoring?",
+      "code": "idk",
       "type": "bool"
     }
   ],
@@ -130,34 +105,21 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "1": "Not Effective<br>",
+        "2": "Average<br>",
+        "3": "Very Effective<br>",
+        "0": "Not observed<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "0"
     },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "1": "Bad Defense<br>",
-        "2": "Below Average<br>",
-        "3": "Above average<br>",
-        "4": "Excellent<br>",
+        "2": "Poor Defense<br>",
+        "4": "Average Average<br>",
+        "6": "Excellent average<br>",
         "0": "Did not play defense<br>"
-      },
-      "required": "true",
-      "defaultValue": "0"
-    },
-    { "name": "Speed",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "0": "Very Slow<br>",
-        "1": "Somewhat Slow<br>",
-        "2": "Somewhat fast<br>",
-	    "3": "Very Fast<br>"			
       },
       "required": "true",
       "defaultValue": "0"
@@ -177,9 +139,16 @@ var config_data = `
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
-      "type": "bool"
+      "type": "radio",
+	"choices": {
+          "0": "Bad/worst<br>",
+       	  "1": "Below Average<br>",
+       	  "2": "Above average<br>",
+          "3": "Excellent/ideal<br>"
+      },
+	"required": "true"
     },
-    { "name": "Comments",
+    { "name": "Comments(be concise)",
       "code": "co",
       "type": "text",
       "size": 30,
